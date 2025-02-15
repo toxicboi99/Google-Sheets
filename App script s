@@ -1,0 +1,7 @@
+let sheet=SpreadsheetApp.openByUrl('Url of your sheet here ')
+let sheetName=sheet.getSheetByName('Sheet1')
+function doPost(e){
+  data=e.parameter;
+  sheetName.appendRow([data.email,data.password]);
+  return ContentService.createTextOutput('Data Save Sucessfully');
+}
